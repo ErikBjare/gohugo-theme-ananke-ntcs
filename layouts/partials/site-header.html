@@ -3,7 +3,7 @@
   {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
   {{ $featured_image := (trim $featured_image "/") | absURL }}
   <header class="cover bg-top">
-    <div class="{{ .Site.Params.cover_dimming_class | default "bg-red" }}">
+    <div style="background-color: rgb(255, 46, 71); color: rgb(255, 238, 191);">
       {{ partial "site-navigation.html" .}}
       <!--
       <div class="tc-l ph3 ph4-ns">
@@ -13,14 +13,13 @@
       </div>
       -->
             
-      <div class="flex">
-          <div class="w-25"></div>
-          <div class="w-50">
-              <h1 class="f3 fw7 f-subheadline-l lh-solid fw2 mb0 ttu" style="font-family: Martel;">
+      <div class="flex flex-wrap justify-between mw8 center">
+          <div class="w-100-m w-50-l w-100 pa3">
+              <h1 class="fw7 f-subheadline-l lh-solid fw2 mb3 ttu" style="font-family: Martel; font-size: 4em;">
                   The NeuroTech Challenge Series
               </h1>
 
-              <h3 class="f2 fw1 mv0 i ttu mt1">
+              <h3 class="f3 fw1 mv0 i ttu mt1">
                   Upcoming Challenge:
               </h3>
 
@@ -28,21 +27,21 @@
                   December 2021 | NTCS Phase 1 | Mobile EEG data collection
               </h3>
 
-              <h3 class="f3 fw2">
+              <div class="fw2">
                   Our first challenge will be launching soon!
-              </h3>
-
-              <h3 class="f3 fw2">
+                  <br>
                   Sign up to receive email updates on how to participate.
-              </h3>
-              <a class="f5 link dim br-pill ph4 pv3 mb2 dib white bg-navy" href="{{ .Site.Params.maillist }}">
+              </div>
+
+              <a class="f5 link dim br-pill ph4 pv3 mt4 dib white bg-navy" href="{{ .Site.Params.maillist }}">
                   NOTIFY ME
               </a>
           </div>
-          <div class="w-50">
-            <img src="{{ $featured_image }}" />
+          <div class="w-100-m w-50-l w-100 pa2 justify-center">
+              <div>
+                <img class="w-50-m w-100-ns center db" src="{{ $featured_image }}" />
+              </div>
           </div>
-          <div class="w-25"></div>
       </div>
         {{ with .Site.Params.description }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
